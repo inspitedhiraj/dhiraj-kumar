@@ -1,0 +1,234 @@
+{% load static %}
+</div>
+          <!-- Content wrapper end -->
+
+          <!-- App Footer start -->
+          <div class="app-footer">
+            <span>© Tannis 2025</span>
+          </div>
+          <!-- App footer end -->
+
+        </div>
+        <!-- Content wrapper scroll end -->
+
+      </div>
+      <!-- *************
+				************ Main container end *************
+			************* -->
+
+    </div>
+    <!-- Page wrapper end -->
+
+    <!-- *************
+			************ Required JavaScript Files *************
+		************* -->
+    <!-- Required jQuery first, then Bootstrap Bundle JS -->
+    <script src="{% static '' %}admin-panel/assets/js/jquery.min.js"></script>
+    <script src="{% static '' %}admin-panel/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static '' %}admin-panel/assets/js/modernizr.js"></script>
+    <script src="{% static '' %}admin-panel/assets/js/moment.js"></script>
+
+    <!-- *************
+			************ Vendor Js Files *************
+		************* -->
+
+    <!-- Overlay Scroll JS -->
+    <script src="{% static '' %}admin-panel/assets/vendor/overlay-scroll/jquery.overlayScrollbars.min.js"></script>
+    <script src="{% static '' %}admin-panel/assets/vendor/overlay-scroll/custom-scrollbar.js"></script>
+
+    <!-- Apex Charts -->
+    <script src="{% static '' %}admin-panel/assets/vendor/apex/apexcharts.min.js"></script>
+    <script src="{% static '' %}admin-panel/assets/vendor/apex/custom/sales/salesGraph.js"></script>
+    <script src="{% static '' %}admin-panel/assets/vendor/apex/custom/sales/revenueGraph.js"></script>
+    <script src="{% static '' %}admin-panel/assets/vendor/apex/custom/sales/taskGraph.js"></script>
+
+    <!-- Main Js Required -->
+    <script src="{% static '' %}admin-panel/assets/js/main.js"></script>
+    <script>
+      $(document).ready(function(){
+            $('#category').change(function(){
+               var category = $(this).val();
+               var url = '/fetch-mid-category/'
+               $.ajax({
+               type: "POST",
+               url: url,
+               data: {'category':category, csrfmiddlewaretoken: '{{ csrf_token }}',},
+               // dataType:"jsonp"
+               success: function(data){
+                  $( "#mid-category" ).fadeIn(500).html(data);
+               },
+               error: function(data){
+                  alert(data);
+               },
+               });
+            })
+         })
+    
+    function change_product_status(id) {
+              var url = '/change-product-status/';
+              $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {'id':id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+                 // dataType:"jsonp"
+                 success: function(data){
+                    alert(data);
+                    location.reload();
+                 },
+                 error: function(data){
+                    alert(data);
+                 },
+              });
+           }
+
+    function change_vendor_status(id) {
+              var url = '/change-vendor-status/';
+              $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {'id':id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+                 // dataType:"jsonp"
+                 success: function(data){
+                    alert(data);
+                    location.reload();
+                 },
+                 error: function(data){
+                    alert(data);
+                 },
+              });
+           }
+           
+    $(document).ready(function(){
+            $('#order-status').change(function(){
+               var order_status = $(this).val();
+               var order_id = $(this).data('order-id');
+               var url = '/change-order-status/'
+               $.ajax({
+               type: "POST",
+               url: url,
+               data: {'order-status':order_status, 'order-id':order_id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+               // dataType:"jsonp"
+               success: function(data){
+                  alert(data);
+               },
+               error: function(data){
+                  alert(data);
+               },
+               });
+            })
+         })
+    
+    $(document).ready(function(){
+            $('#customer-status').change(function(){
+               var order_status = $(this).val();
+               var order_id = $(this).data('order-id');
+               var url = '/change-order-status/'
+               $.ajax({
+               type: "POST",
+               url: url,
+               data: {'order-status':order_status, 'order-id':order_id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+               // dataType:"jsonp"
+               success: function(data){
+                  alert(data);
+               },
+               error: function(data){
+                  alert(data);
+               },
+               });
+            })
+         })
+    
+    function change_customer_status(id) {
+              var url = '/change-customer-status/';
+              $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {'id':id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+                 // dataType:"jsonp"
+                 success: function(data){
+                    alert(data);
+                    location.reload();
+                 },
+                 error: function(data){
+                    alert(data);
+                 },
+              });
+           }
+
+    function change_brand_wishlist_status(id) {
+              var url = '/change-brand-wishlist-status/';
+              $.ajax({
+                 type: "POST",
+                 url: url,
+                 data: {'id':id, csrfmiddlewaretoken: '{{ csrf_token }}',},
+                 // dataType:"jsonp"
+                 success: function(data){
+                    alert(data);
+                    location.reload();
+                 },
+                 error: function(data){
+                    alert(data);
+                 },
+              });
+           }
+    function confirmation() {
+        return confirm("Are you sure you want to delete?");
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the buttons and forms
+    const persionalInfoBtn = document.getElementById('persional-info-btn');
+    const companyDetailBtn = document.getElementById('company-detail-btn');
+    const accountDetailBtn = document.getElementById('account-detail-btn');
+    const documentUploadBtn = document.getElementById('document-upload-btn');
+
+    const persionalInfoForm = document.getElementById('persional-info-form');
+    const companyDetailForm = document.getElementById('company-detail-form');
+    const accountDetailForm = document.getElementById('account-detail-form');
+    const documentUploadForm = document.getElementById('document-upload-form');
+
+    // Function to hide all forms
+    function hideAllForms() {
+        persionalInfoForm.style.display = 'none';
+        companyDetailForm.style.display = 'none';
+        accountDetailForm.style.display = 'none';
+        documentUploadForm.style.display = 'none';
+    }
+
+    // Initially show the Basic Information form by default
+    hideAllForms();  // Hide all forms first
+    persionalInfoForm.style.display = 'block';  // Show Basic Information form
+
+    // Event listener for Basic Information button
+    persionalInfoBtn.addEventListener('click', function() {
+        hideAllForms();
+        persionalInfoForm.style.display = 'block';
+    });
+
+    // Event listener for Add Images button
+    companyDetailBtn.addEventListener('click', function() {
+        hideAllForms();
+        companyDetailForm.style.display = 'block';
+    });
+
+    // Event listener for GST Information button
+    accountDetailBtn.addEventListener('click', function() {
+        hideAllForms();
+        accountDetailForm.style.display = 'block';
+    });
+    
+    // Event listener for GST Information button
+    documentUploadBtn.addEventListener('click', function() {
+        hideAllForms();
+        documentUploadForm.style.display = 'block';
+    });
+});
+
+    </script>
+    <script>
+	   // var editor1 = new RichTextEditor("#description");
+	    //editor1.setHTMLCode("Use inline HTML or setHTMLCode to init the default content.");
+    </script>
+
+  </body>
+
+</html>

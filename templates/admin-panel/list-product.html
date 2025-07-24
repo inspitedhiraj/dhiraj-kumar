@@ -1,0 +1,70 @@
+{% include 'admin-panel/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Sub category</th>
+                            <th>MRP</th>
+                            <th>Selling Price</th>
+                            <th>Type Of Product</th>
+                            <th>Brand</th>
+                            <th>Vendor</th>
+                            <th>Created At</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for p in product %}
+                          <tr>
+                            <td>{{ p.id }}</td>
+                            <td>{{ p.p_name }}</td>
+                            <td>{{ p.sub_category }}</td>
+                            <td>{{ p.mrp }}</td>
+                            <td>{{ p.selling_price }}</td>
+                            <td>{{ p.product_type }}</td>
+                            <td>{{ p.brand }}</td>
+                            <td>{{ p.vendor_name }}</td>
+                            <td>{{ p.created_at }}</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="status" onchange="change_product_status({{ p.id }})" {% if p.status == True %}checked{% endif %}>
+                                </div>
+                            </td>
+                            <td>
+                              <a href="/list-variant/{{ p.id }}" >Show Variant</a><br/>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

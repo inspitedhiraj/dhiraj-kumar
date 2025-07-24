@@ -1,0 +1,52 @@
+{% include 'admin-panel/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Vendor</th>
+                            <th>Sub category</th>
+                            <th>Commission</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for c in commission %}
+                          <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.vendor.first_name }}</td>
+                            <td>{{ c.sub_category }}</td>
+                            <td>{{ c.commission }}</td>
+                            <td><a href="#" >Delete</a></td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

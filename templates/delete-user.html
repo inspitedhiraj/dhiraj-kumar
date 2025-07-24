@@ -1,0 +1,55 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Best Bootstrap Admin Dashboards">
+    <meta name="author" content="Bootstrap Gallery" />
+    <link rel="canonical" href="https://www.bootstrap.gallery/">
+    <meta property="og:url" content="https://www.bootstrap.gallery">
+    <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+    <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta property="og:type" content="Website">
+    <meta property="og:site_name" content="Bootstrap Gallery">
+    <link rel="shortcut icon" href="{% static '' %}admin-panel/assets/images/favicon.svg">
+
+    <!-- Title -->
+    <title>Tannis</title>
+    
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/css/main.min.css">
+
+
+    <!-- Bootstrap font icons css -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/fonts/bootstrap/bootstrap-icons.css">
+
+  </head>
+
+  <body>
+    <div class="container" style="max-width:500px; margin:0 auto;">
+        <div class="text-center"><h4>Delete user by username</h4></div>
+        {% if message %}
+        <div class="alert alert-primary text-center">{{ message }}</div>
+        {% endif %}
+        <form method="POST" class="mt-4">
+            <div class="row g-2">
+                <div class="col-12 col-md-8">
+                    <input type="text" name="user-name" class="form-control" placeholder="Enter User Name">
+                </div>
+                <div class="col-12 col-md-4">
+                    <input type="submit" class="btn btn-danger w-100" value="DELETE">
+                </div>
+            </div>
+        </form>
+        </div>
+    <script src="{% static '' %}admin-panel/assets/js/jquery.min.js"></script>
+    <script src="{% static '' %}admin-panel/assets/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

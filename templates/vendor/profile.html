@@ -1,0 +1,101 @@
+{% include 'vendor/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-sm-12 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Profile</div>
+                  </div>
+                  <div class="card-body">
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                      <div class="alert alert-primary">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-12 col-12">
+                        <div class="card-border">
+                          <div class="card-border-title">General Information</div>
+                          <div class="card-border-body">
+
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">User Name <span class="text-red">*</span></label>
+                                  <input type="text" name="user-name" class="form-control" placeholder="" value="{{ user.username }}" disabled>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Name <span class="text-red">*</span></label>
+                                  <input type="text" name="name" class="form-control" placeholder="Enter Name" value="{{ user.first_name }}">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">GST <span class="text-red">*</span></label>
+                                  <input type="text" name="gst" class="form-control" placeholder="Enter GST" value="{{ profile.gst }}">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">E-mail <span class="text-red">*</span></label>
+                                  <input type="email" name="e-mail" class="form-control" placeholder="Enter E-mail" value="{{ user.email }}">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Phone <span class="text-red">*</span></label>
+                                  <input type="text" name="phone" class="form-control" placeholder="Enter Phone Number" value="{{ profile.phone }}">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-0">
+                                  <label class="form-label">Address <span class="text-red">*</span></label>
+                                  <textarea rows="4" name="address" class="form-control"
+                                    placeholder="Enter Address">{{ profile.address }}</textarea>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">City <span class="text-red">*</span></label>
+                                  <input type="text" name="city" class="form-control" placeholder="Enter City" value="{{ profile.city }}">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">State <span class="text-red">*</span></label>
+                                  <input type="text" name="state" class="form-control" placeholder="Enter State" value="{{ profile.state }}">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-12">
+                        <div class="custom-btn-group flex-end">
+                          <button type="button" class="btn btn-light">Cancel</button>
+                          <input type="submit" class="btn btn-success" value="Update">
+                          <!-- <a href="products.html" class="btn btn-success">Add Product</a> -->
+                          <!-- <button type="submit" class="btn btn-success">Add Product</button> -->
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'vendor/footer.html' %}

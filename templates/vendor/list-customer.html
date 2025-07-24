@@ -1,0 +1,62 @@
+{% include 'vendor/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>E-mail</th>
+                            <th>Phone</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Pin code</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for c in customer %}
+                          <tr>
+                            <td>{{ c.id }}</td>
+                            <td>{{ c.user.first_name }} {{ c.user.last_name }}</td>
+                            <td>{{ c.user.email }}</td>
+                            <td>{{ c.phone }}</td>
+                            <td>{{ c.dob }}</td>
+                            <td>{{ c.gender }}</td>
+                            <td>{{ c.address }}</td>
+                            <td>{{ c.city }}</td>
+                            <td>{{ c.state }}</td>
+                            <td>{{ c.pin_code }}</td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'vendor/footer.html' %}

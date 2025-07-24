@@ -1,0 +1,108 @@
+{% include 'admin-panel/header.html' %}
+{% load static %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-red">
+                    <i class="bi bi-pie-chart"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-red">{{ total_vendor }}</h3>
+                    <p>Vendor</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-blue">
+                    <i class="bi bi-emoji-smile"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-blue">{{ total_order }}</h3>
+                    <p>Orders</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-yellow">
+                    <i class="bi bi-box-seam"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-yellow">{{ number_of_product }}</h3>
+                    <p>Products</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-green">
+                    <i class="bi bi-handbag"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-green">{{ total_brand }}</h3>
+                    <p>Brand</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+            
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-red">
+                    <i class="bi bi-pie-chart"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-red">{{ total_banner }}</h3>
+                    <p>Banners</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-blue">
+                    <i class="bi bi-emoji-smile"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-blue">{{ total_category }}</h3>
+                    <p>Categories</p>
+                  </div>
+                </div>
+              </div>
+              <!--<div class="col-xxl-3 col-sm-6 col-12">-->
+              <!--  <div class="stats-tile">-->
+              <!--    <div class="sale-icon shade-yellow">-->
+              <!--      <i class="bi bi-box-seam"></i>-->
+              <!--    </div>-->
+              <!--    <div class="sale-details">-->
+              <!--      <h3 class="text-yellow">{{ number_of_product }}</h3>-->
+              <!--      <p>Products</p>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+              <!--<div class="col-xxl-3 col-sm-6 col-12">-->
+              <!--  <div class="stats-tile">-->
+              <!--    <div class="sale-icon shade-green">-->
+              <!--      <i class="bi bi-handbag"></i>-->
+              <!--    </div>-->
+              <!--    <div class="sale-details">-->
+              <!--      <h3 class="text-green">{{ total_brand }}</h3>-->
+              <!--      <p>Brand</p>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

@@ -1,0 +1,71 @@
+{% include 'admin-panel/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>GST</th>
+                            <th>State</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Added by</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for v in vendor %}
+                          <tr>
+                            <td>{{ v.id }}</td>
+                            <td>{{ v.user }}</td>
+                            <td>{{ v.user.email }}</td>
+                            <td>{{ v.phone }}</td>
+                            <td>{{ v.gst }}</td>
+                            <td>{{ v.state }}</td>
+                            <td>{{ v.city }}</td>
+                            <td>{{ v.address }}</td>
+                            <td>{{ v.added_by }}</td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" role="switch" id="status" onchange="change_vendor_status({{ v.id }})" {% if v.status == True %}checked{% endif %}>
+                                </div>
+                            </td>
+                            <td>
+                                <a href="/edit-vendor/{{ v.id }}" class="p-2"><i class="bi bi-pencil text-black-50"></i></a>
+                              <a href="/delete-vendor/{{ v.id }}" class="p-2" onclick="return confirmation();"><i class="bi bi-trash text-red"></i></a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

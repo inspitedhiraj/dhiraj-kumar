@@ -1,0 +1,54 @@
+{% include 'admin-panel/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Coupon code</th>
+                            <th>Image</th>
+                            <th>Description</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for t in tranding_offer %}
+                          <tr>
+                            <td>{{ t.id }}</td>
+                            <td>{{ t.coupon }}</td>
+                            <td><img src="{{ t.image.url }}" class="img-fluid"/></td>
+                            <td>{{ t.description }}</td>
+                            <td>
+                                <!--<a href="/delete-product-type/{{ t.id }}" onclick="return confirmation();"><i class="bi bi-trash text-red"></i></a>-->
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

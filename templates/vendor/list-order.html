@@ -1,0 +1,78 @@
+{% include 'vendor/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <nav class="nav">
+                      <a class="nav-link" href="/vendor/list-order?status=placed">Placed</a>
+                      <a class="nav-link" href="/vendor/list-order?status=delivered">Delivered</a>
+                      <a class="nav-link" href="/vendor/list-order?status=canceled">Canceled</a>
+                    </nav>
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>Order Date</th>
+                            <th>Order Id</th>
+                            <th>Customer Name</th>
+                            <th>Total Price</th>
+                            <th>Order Status</th>
+                            <th>Payment status</th>
+                            <th>Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for o in order %}
+                          <tr>
+                            <td>{{ o.order_date }}</td>
+                            <td>{{ o.id }}</td>
+                            <td>{{ o.customer.first_name }} {{ o.customer.last_name }}</td>
+                            <td>{{ o.total_price }}</td>
+                            <td>
+                                <select class="form-control" id="order-status" data-order-id="{{ o.id }}">
+                                    <option value="placed" {% if o.status == 'placed' %}selected{% endif %}>Placed</option>
+                                    <option value="delivered" {% if o.status == 'delivered' %}selected{% endif %}>Delivered</option>
+                                    <option value="canceled" {% if o.status == 'canceled' %}selected{% endif %}>Canceled</option>
+                                </select>
+                            </td>
+                            <td>
+                                {% if o.payment_status == 'unpaid' %}
+                                <span class="badge shade-red min-90">{{ o.payment_status }}</span>
+                                {% elif o.payment_status == 'paid' %}
+                                <span class="badge shade-green min-90>">{{ o.payment_status }}</span>
+                                {% else %}
+                                <span class="badge shade-blue min-90">{{ o.payment_status }}</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <a href="/vendor/list-ordered-item/{{ o.id }}" >Ordered Item</a></br>
+                              <a href="/vendor/invoice/{{ o.id }}" >View Invoice</a>
+                            </td>
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'vendor/footer.html' %}

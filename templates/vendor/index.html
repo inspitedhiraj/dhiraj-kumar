@@ -1,0 +1,59 @@
+{% include 'vendor/header.html' %}
+{% load static %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <!--<div class="col-xxl-3 col-sm-6 col-12">-->
+              <!--  <div class="stats-tile">-->
+              <!--    <div class="sale-icon shade-red">-->
+              <!--      <i class="bi bi-pie-chart"></i>-->
+              <!--    </div>-->
+              <!--    <div class="sale-details">-->
+              <!--      <h3 class="text-red">250k</h3>-->
+              <!--      <p>Sales</p>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+              <!--<div class="col-xxl-3 col-sm-6 col-12">-->
+              <!--  <div class="stats-tile">-->
+              <!--    <div class="sale-icon shade-blue">-->
+              <!--      <i class="bi bi-emoji-smile"></i>-->
+              <!--    </div>-->
+              <!--    <div class="sale-details">-->
+              <!--      <h3 class="text-blue">24m</h3>-->
+              <!--      <p>Customers</p>-->
+              <!--    </div>-->
+              <!--  </div>-->
+              <!--</div>-->
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-yellow">
+                    <i class="bi bi-box-seam"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-yellow">{{ number_of_product }}</h3>
+                    <p>Products</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-sm-6 col-12">
+                <div class="stats-tile">
+                  <div class="sale-icon shade-green">
+                    <i class="bi bi-handbag"></i>
+                  </div>
+                  <div class="sale-details">
+                    <h3 class="text-green">{{ number_of_order }}</h3>
+                    <p>Order</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'vendor/footer.html' %}

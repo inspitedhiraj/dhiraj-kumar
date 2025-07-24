@@ -1,0 +1,274 @@
+{% include 'admin-panel/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-sm-12 col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <div class="card-title">Add Vendor</div>
+                  </div>
+                  <div class="card-body">
+                   <div class="d-flex gap-2 mb-2">
+                    <button class="btn btn-secondary" id="persional-info-btn">Personal Information</button>
+                    <button class="btn btn-secondary" id="company-detail-btn">Company Detail</button>
+                    <button class="btn btn-secondary" id="account-detail-btn">Account Detail</button>
+                    <button class="btn btn-secondary" id="document-upload-btn">Document Upload</button>
+                    </div>
+                    <div id="persional-info-form" class="form-container" style="display:none;">
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                      <div class="alert alert-primary">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-12 col-12">
+                        <div class="card-border">
+                          <div class="card-border-title">Personal Information</div>
+                          <div class="card-border-body">
+
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Vendor Name <span class="text-red">*</span></label>
+                                  <input type="text" name="vendor-name" class="form-control" placeholder="Enter Vendor  Name">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">E-mail <span class="text-red">*</span></label>
+                                  <input type="email" name="email" class="form-control" placeholder="Enter E-mail address">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Phone <span class="text-red">*</span></label>
+                                  <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-0">
+                                  <label class="form-label">Address <span class="text-red">*</span></label>
+                                  <textarea rows="4" name="address" class="form-control"
+                                    placeholder=""></textarea>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">State <span class="text-red">*</span></label>
+                                  <input type="text" name="state" class="form-control" placeholder="Enter State">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">City <span class="text-red">*</span></label>
+                                  <input type="text" name="city" class="form-control" placeholder="Enter City">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-12">
+                        <div class="custom-btn-group flex-end">
+                          <button type="button" class="btn btn-light">Cancel</button>
+                          <input type="submit" class="btn btn-success">
+                          <!-- <a href="products.html" class="btn btn-success">Add Product</a> -->
+                          <!-- <button type="submit" class="btn btn-success">Add Product</button> -->
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                    </div>
+
+                    <div id="company-detail-form" class="form-container" style="display:none;">
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                      <div class="alert alert-primary">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-12 col-12">
+                        <div class="card-border">
+                          <div class="card-border-title">Company Detail</div>
+                          <div class="card-border-body">
+
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Company Name <span class="text-red">*</span></label>
+                                  <input type="text" name="company-name" class="form-control" placeholder="Enter Company  Name">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">E-mail <span class="text-red">*</span></label>
+                                  <input type="email" name="email" class="form-control" placeholder="Enter E-mail address">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Phone <span class="text-red">*</span></label>
+                                  <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-0">
+                                  <label class="form-label">Address <span class="text-red">*</span></label>
+                                  <textarea rows="4" name="address" class="form-control"
+                                    placeholder=""></textarea>
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">State <span class="text-red">*</span></label>
+                                  <input type="text" name="state" class="form-control" placeholder="Enter State">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">City <span class="text-red">*</span></label>
+                                  <input type="text" name="city" class="form-control" placeholder="Enter City">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-12">
+                        <div class="custom-btn-group flex-end">
+                          <button type="button" class="btn btn-light">Cancel</button>
+                          <input type="submit" class="btn btn-success">
+                          <!-- <a href="products.html" class="btn btn-success">Add Product</a> -->
+                          <!-- <button type="submit" class="btn btn-success">Add Product</button> -->
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                    </div>
+                    
+                    <div id="account-detail-form" class="form-container" style="display:none;">
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                      <div class="alert alert-primary">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-12 col-12">
+                        <div class="card-border">
+                          <div class="card-border-title">Account Detail</div>
+                          <div class="card-border-body">
+
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Account Number <span class="text-red">*</span></label>
+                                  <input type="text" name="account-number" class="form-control" placeholder="Enter Account Number">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">IFSC <span class="text-red">*</span></label>
+                                  <input type="text" name="ifsc" class="form-control" placeholder="Enter IFSC">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Holder Name <span class="text-red">*</span></label>
+                                  <input type="text" name="holder-name" class="form-control" placeholder="Enter Holder Name">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-12">
+                        <div class="custom-btn-group flex-end">
+                          <button type="button" class="btn btn-light">Cancel</button>
+                          <input type="submit" class="btn btn-success">
+                          <!-- <a href="products.html" class="btn btn-success">Add Product</a> -->
+                          <!-- <button type="submit" class="btn btn-success">Add Product</button> -->
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                    </div>
+                    
+                    <div id="document-upload-form" class="form-container" style="display:none;">
+                    <form method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      {% for message in messages %}
+                      <div class="alert alert-primary">
+                        {{ message }}
+                      </div>
+                      {% endfor %}
+                    <div class="row">
+                      <div class="col-sm-12 col-12">
+                        <div class="card-border">
+                          <div class="card-border-title">Document Upload</div>
+                          <div class="card-border-body">
+
+                            <div class="row">
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Passbook <span class="text-red">*</span></label>
+                                  <input type="file" name="passbook" class="form-control">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">PAN <span class="text-red">*</span></label>
+                                  <input type="file" name="pan" class="form-control">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">Aadhar <span class="text-red">*</span></label>
+                                  <input type="file" name="aadhar" class="form-control">
+                                </div>
+                              </div>
+                              <div class="col-sm-6 col-12">
+                                <div class="mb-3">
+                                  <label class="form-label">GST <span class="text-red">*</span></label>
+                                  <input type="file" name="gst" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-12">
+                        <div class="custom-btn-group flex-end">
+                          <button type="button" class="btn btn-light">Cancel</button>
+                          <input type="submit" class="btn btn-success">
+                          <!-- <a href="products.html" class="btn btn-success">Add Product</a> -->
+                          <!-- <button type="submit" class="btn btn-success">Add Product</button> -->
+                        </div>
+                      </div>
+                    </div>
+                    </form>
+                    </div>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'admin-panel/footer.html' %}

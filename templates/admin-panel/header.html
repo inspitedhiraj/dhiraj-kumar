@@ -1,0 +1,348 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Meta -->
+    <meta name="description" content="Best Bootstrap Admin Dashboards">
+    <meta name="author" content="Bootstrap Gallery" />
+    <link rel="canonical" href="https://www.bootstrap.gallery/">
+    <meta property="og:url" content="https://www.bootstrap.gallery">
+    <meta property="og:title" content="Admin Templates - Dashboard Templates | Bootstrap Gallery">
+    <meta property="og:description" content="Marketplace for Bootstrap Admin Dashboards">
+    <meta property="og:type" content="Website">
+    <meta property="og:site_name" content="Bootstrap Gallery">
+    <link rel="shortcut icon" href="{% static '' %}admin-panel/assets/images/favicon.svg">
+
+    <!-- Title -->
+    <title>Tannis</title>
+
+
+    <!-- *************
+			************ Common Css Files *************
+		************ -->
+
+    <!-- Animated css -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/css/animate.css">
+
+    <!-- Bootstrap font icons css -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/fonts/bootstrap/bootstrap-icons.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/css/main.min.css">
+
+
+    <!-- *************
+			************ Vendor Css Files *************
+		************ -->
+
+    <!-- Scrollbar CSS -->
+    <link rel="stylesheet" href="{% static '' %}admin-panel/assets/vendor/overlay-scroll/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{% static '' %}richtexteditor/rte_theme_default.css" />
+    <script type="text/javascript" src="{% static '' %}richtexteditor/rte.js"></script>
+    <script type="text/javascript" src='{% static '' %}richtexteditor/plugins/all_plugins.js'></script>
+
+  </head>
+
+  <body>
+
+    <!-- Loading wrapper start -->
+    <!-- <div id="loading-wrapper">
+      <div class="spinner">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+        <div class="line6"></div>
+      </div>
+    </div> -->
+    <!-- Loading wrapper end -->
+
+    <!-- Page wrapper start -->
+    <div class="page-wrapper">
+
+      <!-- Sidebar wrapper start -->
+      <nav class="sidebar-wrapper">
+
+        <!-- Sidebar brand starts -->
+        <div class="sidebar-brand">
+          <a href="/dashboard/" class="logo">
+            <img src="{% static '' %}admin-panel/assets/images/logo.jpeg" alt="Admin Dashboards" />
+          </a>
+        </div>
+        <!-- Sidebar brand starts -->
+
+        <!-- Sidebar menu starts -->
+        <div class="sidebar-menu">
+          <div class="sidebarMenuScroll">
+            <ul>
+              <li>
+                <a href="/dashboard/">
+                  <i class="bi bi-house"></i>
+                  <span class="menu-text">Dashboard</span>
+                </a>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Banner</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-banner/">Add Banner</a>
+                    </li>
+                    <li>
+                      <a href="/list-banner/">List Banner</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Category</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-category/">Add Category</a>
+                    </li>
+                    <li>
+                      <a href="/list-category/">List Category</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Mid Category</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-mid-category/">Add Mid Category</a>
+                    </li>
+                    <li>
+                      <a href="/list-mid-category/">List Mid Category</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Sub Category</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-sub-category/">Add sub category</a>
+                    </li>
+                    <li>
+                      <a href="/list-sub-category/">List sub category</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Product Type</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-product-type/">Add product type</a>
+                    </li>
+                    <li>
+                      <a href="/list-product-type/">List product type</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Trandding offer</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-tranding-offer/">Add tranding offer</a>
+                    </li>
+                    <li>
+                      <a href="/list-tranding-offer/">List tranding offer</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Brand</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-brand/">Add brand</a>
+                    </li>
+                    <li>
+                      <a href="/list-brand/">List Brand</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="sidebar-dropdown">
+                <a href="#">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Vendor</span>
+                </a>
+                <div class="sidebar-submenu">
+                  <ul>
+                    <li>
+                      <a href="/add-vendor/">Add vendor</a>
+                    </li>
+                    <li>
+                      <a href="/list-vendor/">List vendor</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="/list-product/">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="/list-order/">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Orders</span>
+                </a>
+              </li>
+              <li>
+                <a href="/list-customer/">
+                  <i class="bi bi-handbag"></i>
+                  <span class="menu-text">Customers</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Sidebar menu ends -->
+
+      </nav>
+      <!-- Sidebar wrapper end -->
+
+      <!-- *************
+				************ Main container start *************
+			************* -->
+      <div class="main-container">
+
+        <!-- Page header starts -->
+        <div class="page-header">
+
+          <!-- Toggle sidebar start -->
+          <div class="toggle-sidebar" id="toggle-sidebar"><i class="bi bi-list"></i></div>
+          <!-- Toggle sidebar end -->
+
+          <!-- Logo sm starts -->
+          <a href="/dashboard/" class="d-lg-none d-md-block">
+            <img src="{% static '' %}admin-panel/assets/images/logo.jpeg" class="logo-sm" alt="Bootstrap Gallery">
+          </a>
+          <!-- Logo sm ends -->
+
+          <!-- Breadcrumb start -->
+          <ol class="breadcrumb d-lg-flex d-none">
+            <li class="breadcrumb-item">
+              <i class="bi bi-house"></i>
+              <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item breadcrumb-active" aria-current="page">Sales</li>
+          </ol>
+          <!-- Breadcrumb end -->
+
+          <!-- Header actions ccontainer start -->
+          <div class="header-actions-container">
+
+            <!-- Search container start -->
+            <!-- <div class="search-container d-lg-block d-none"> -->
+
+              <!-- Search input group start -->
+              <!-- <div class="input-group">
+                <input type="text" class="form-control" id="searchAny" placeholder="Search anything">
+                <button class="btn" type="button">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div> -->
+              <!-- Search input group end -->
+
+            <!-- </div> -->
+            <!-- Search container end -->
+
+            <!-- Leads start -->
+            <!-- <a href="orders.html" class="leads d-none d-xl-flex">
+              <div class="lead-details">You have <span class="count"> 21 </span> new leads </div>
+              <span class="lead-icon"><i
+                  class="bi bi-bell-fill animate__animated animate__swing animate__infinite infinite"></i><b
+                  class="dot animate__animated animate__heartBeat animate__infinite"></b></span>
+            </a> -->
+            <!-- Leads end -->
+
+            <!-- Header actions start -->
+            <ul class="header-actions">
+              <!-- <li class="dropdown d-none d-md-block">
+                <a href="#" id="countries" data-toggle="dropdown" aria-haspopup="true">
+                  <img src="{% static '' %}admin-panel/assets/images/flags/1x1/br.svg" class="flag-img" alt="Admin Panels" />
+                </a>
+                <div class="dropdown-menu dropdown-menu-end mini" aria-labelledby="countries">
+                  <div class="country-container">
+                    <a href="index.html">
+                      <img src="{% static '' %}admin-panel/assets/images/flags/1x1/us.svg" alt="Clean Admin Dashboards" />
+                    </a>
+                    <a href="index.html">
+                      <img src="{% static '' %}admin-panel/assets/images/flags/1x1/in.svg" alt="Google Dashboards" />
+                    </a>
+                    <a href="index.html">
+                      <img src="{% static '' %}admin-panel/assets/images/flags/1x1/gb.svg" alt="AI Admin Dashboards" />
+                    </a>
+                    <a href="index.html">
+                      <img src="{% static '' %}admin-panel/assets/images/flags/1x1/tr.svg" alt="Modern Dashboards" />
+                    </a>
+                    <a href="index.html">
+                      <img src="{% static '' %}admin-panel/assets/images/flags/1x1/ca.svg" alt="Best Admin Dashboards" />
+                    </a>
+                  </div>
+                </div>
+              </li> -->
+              <li class="dropdown">
+                <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+                  <!--<span class="user-name d-none d-md-block">Abigale Heaney</span>-->
+                  <span class="avatar">
+                    <img src="{% static '' %}admin-panel/assets/images/user.png" alt="Admin Templates">
+                    <span class="status online"></span>
+                  </span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userSettings">
+                  <div class="header-profile-actions">
+                    <!--<a href="profile.html">Profile</a>-->
+                    <!--<a href="account-settings.html">Settings</a>-->
+                    <a href="/admin-logout/">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!-- Header actions end -->
+
+          </div>
+          <!-- Header actions ccontainer end -->
+
+        </div>
+        <!-- Page header ends -->

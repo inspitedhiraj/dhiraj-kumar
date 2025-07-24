@@ -1,0 +1,67 @@
+{% include 'vendor/header.html' %}
+
+        <!-- Content wrapper scroll start -->
+        <div class="content-wrapper-scroll">
+
+          <!-- Content wrapper start -->
+          <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row">
+              <div class="col-12">
+
+                <div class="card">
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-bordered m-0">
+                        <thead>
+                          <tr>
+                            <th>ID</th>
+                            <th>Product name</th>
+                            <th>Qty.</th>
+                            <!--<th>Unit Price</th>-->
+                            <!--<th>Total Price</th>-->
+                            <th>Status</th>
+                            <!--<th>Action</th>-->
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {% for o in ordered_item %}
+                          <tr>
+                            <td>{{ o.id }}</td>
+                            <td>{{ o.variant.product.p_name }}</td>
+                            <td>{{ o.qty }}</td>
+                            <!--<td>{{ o.unit_price }}</td>-->
+                            <!--<td>{{ o.total_price }}</td>-->
+                            <td>
+                                <select class="form-control" id="ordered-item-status" data-order-id="{{ o.id }}">
+                                    <option value="placed" {% if o.status == 'placed' %}selected{% endif %}>Placed</option>
+                                    <option value="delivered" {% if o.status == 'delivered' %}selected{% endif %}>Delivered</option>
+                                    <option value="canceled" {% if o.status == 'canceled' %}selected{% endif %}>Canceled</option>
+                                </select>
+                            </td>
+                            <!--<td>-->
+                            <!--  <a href="/vendor/add-variant/{{ p.id }}" >Add Variant</a><br/>-->
+                            <!--  <a href="/vendor/list-variant/{{ p.id }}" >Show Variant</a><br/>-->
+                            <!--  <a href="/vendor/edit-product/{{ p.id }}" ><i class="bi bi-pencil text-green"></i></a>-->
+                            <!--  <a href="/vendor/delete-product/{{ p.id }}" ><i class="bi bi-trash text-red"></i></a>-->
+                            <!--</td>-->
+                          </tr>
+                          {% endfor %}
+                        </tbody>
+                        <!-- <tfoot>
+                          <tr>
+                            <td colspan="5" class="text-center">Data retrieved from <a href="" class="link">Arise
+                                admin.</a>.</td>
+                          </tr>
+                        </tfoot> -->
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- Row end -->
+
+            {% include 'vendor/footer.html' %}
